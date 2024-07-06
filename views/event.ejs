@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Detail - Celestial Gatherings</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <%- include('partials/nav') %>
+
+    <div class="container">
+        <h1>Event Detail</h1>
+        <div class="divider"></div>
+        <img src="<%= event.image %>" alt="Event Image" class="img-fluid">
+        <h2><%= he.decode(event.title) %></h2>
+        <p><strong>Host:</strong> <%= event.host.firstName %> <%= event.host.lastName %></p>
+        <p><strong>Date/Time:</strong> <%= event.startDateTimeFormatted %> - <%= event.endDateTimeFormatted %></p>
+        <p><strong>Location:</strong> <%= he.decode(event.location) %></p>
+        <p><strong>Category:</strong> <%= event.category %></p>
+        <p><%= he.decode(event.details) %></p>
+
+        <div class="rsvp-section">
+            <h3>RSVP</h3>
+            <form action="/events/<%= event._id %>/rsvp" method="POST">
+                <button type="submit" name="status" value="YES" class="btn btn-success rsvp-button">Yes</button>
+                <button type="submit" name="status" value="NO" class="btn btn-danger rsvp-button">No</button>
+                <button type="submit" name="status" value="MAYBE" class="btn btn-warning rsvp-button">Maybe</button>
+            </form>            
+            <p>Total 'Yes' RSVPs: <%= yesRSVPCount %></p>
+        </div>
+    </div>    
+
+    <%- include('partials/footer') %>
+</body>
+</html>
+

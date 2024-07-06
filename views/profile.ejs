@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Celestial Gatherings</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <%- include('partials/nav') %>
+
+    <div class="container">
+        <h1>Profile</h1>
+        <div class="divider"></div>
+
+        <h2>Welcome!</h2>
+
+        <p>First Name: <%= he.decode(user.firstName) %></p>
+        <p>Last Name: <%= he.decode(user.lastName) %></p>
+        <p>Email: <%= he.decode(user.email) %></p>
+
+        <h2>Your Events</h2>
+        <ul>
+            <% user.events.forEach(event => { %>
+                <li>
+                    <a href="/events/<%= event._id %>"><%= he.decode(event.title) %></a>
+                    <a href="/events/<%= event._id %>/edit" class="btn btn-sm" style="padding: 5px 10px !important; font-size: 14px !important; color: #E0E1DD !important; background-color: #28a745 !important; border: none !important; text-decoration: none !important; display: inline-block !important;">Edit</a>
+                    <button type="button" class="btn btn-sm" style="padding: 5px 10px !important; font-size: 14px !important; color: #E0E1DD !important; background-color: #dc3545 !important; border: none !important; text-decoration: none !important; display: inline-block !important;" onclick="deleteEvent('<%= event._id %>')">Delete</button>
+                </li>
+            <% }) %>
+        </ul>
+
+        <h2>Your RSVPs</h2>
+        <ul>
+            <% user.rsvps.forEach(rsvp => { %>
+                <li>
+                    <a href="/events/<%= rsvp.event._id %>"><%= he.decode(rsvp.event.title) %></a> - <%= rsvp.status %>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <%- include('partials/footer') %>
+    <script src="/javascript/confirmDelete.js"></script>
+</body>
+</html>
+
+
+
+
+

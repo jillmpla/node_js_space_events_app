@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Event - Celestial Gatherings</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <%- include('partials/nav') %>
+
+    <div class="container">
+        <h1>Edit Event</h1>
+        <div class="divider"></div>
+
+        <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+            <div class="alert alert-danger">
+                <ul>
+                    <% errors.forEach(error => { %>
+                        <li><%= error.msg %></li>
+                    <% }) %>
+                </ul>
+            </div>
+        <% } %>
+
+        <form id="editEventForm" action="/events/<%= event._id %>" method="POST" enctype="multipart/form-data" data-event-id="<%= event._id %>">
+            <div class="form-group">
+                <label for="eventTitle">Event Title</label>
+                <input type="text" class="form-control" id="eventTitle" name="eventTitle" value="<%= he.decode(event.title) %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="eventCategory">Category</label>
+                <select class="form-control" id="eventCategory" name="eventCategory" required>
+                    <option value="" disabled>Select a category</option>
+                    <option value="Astronomy" <%= event.category === 'Astronomy' ? 'selected' : '' %>>Astronomy</option>
+                    <option value="Science" <%= event.category === 'Science' ? 'selected' : '' %>>Science</option>
+                    <option value="Space" <%= event.category === 'Space' ? 'selected' : '' %>>Space</option>
+                    <option value="Education" <%= event.category === 'Education' ? 'selected' : '' %>>Education</option>
+                    <option value="Other" <%= event.category === 'Other' ? 'selected' : '' %>>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="startDate">Start Date/Time</label>
+                <input type="datetime-local" class="form-control" id="startDate" name="startDate" value="<%= event.startDateTimeISO.slice(0, 16) %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="endDate">End Date/Time</label>
+                <input type="datetime-local" class="form-control" id="endDate" name="endDate" value="<%= event.endDateTimeISO.slice(0, 16) %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="eventLocation">Location</label>
+                <input type="text" class="form-control" id="eventLocation" name="eventLocation" value="<%= he.decode(event.location) %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="eventImage">Event Image</label>
+                <input type="file" class="form-control-file" id="eventImage" name="eventImage" accept="image/*">
+            </div>
+
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="noImage" name="noImage">
+                <label for="noImage" class="form-check-label">No Image</label>
+            </div>
+
+            <div class="form-group">
+                <label for="eventDescription">Event Description</label>
+                <textarea class="form-control" id="eventDescription" name="eventDescription" required><%= he.decode(event.details) %></textarea>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <a href="/events/<%= event._id %>" class="btn btn-secondary btn-cancel" style="color: #E0E1DD !important;">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+    <%- include('partials/footer') %>
+    <script src="/javascript/formValidation.js"></script>
+    <script src="/javascript/editEvent.js"></script>
+</body>
+</html>
+
+
+

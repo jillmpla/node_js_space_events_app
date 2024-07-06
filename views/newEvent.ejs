@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Event - Celestial Gatherings</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <%- include('partials/nav') %>
+
+    <div class="container">
+        <h1>Create New Event</h1>
+        <div class="divider"></div>
+        
+        <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+            <div class="alert alert-danger">
+                <ul>
+                    <% errors.forEach(error => { %>
+                        <li><%= error.msg %></li>
+                    <% }) %>
+                </ul>
+            </div>
+        <% } %>
+
+        <form action="/events" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="eventTitle">Event Title</label>
+                <input type="text" class="form-control" id="eventTitle" name="eventTitle" value="<%= formData && formData.eventTitle ? he.decode(formData.eventTitle) : '' %>" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="eventCategory">Category</label>
+                <select class="form-control" id="eventCategory" name="eventCategory" required>
+                    <option value="" disabled <%= !formData ? 'selected' : '' %>>Select a category</option>
+                    <option value="Astronomy" <%= formData && formData.eventCategory === 'Astronomy' ? 'selected' : '' %>>Astronomy</option>
+                    <option value="Science" <%= formData && formData.eventCategory === 'Science' ? 'selected' : '' %>>Science</option>
+                    <option value="Space" <%= formData && formData.eventCategory === 'Space' ? 'selected' : '' %>>Space</option>
+                    <option value="Education" <%= formData && formData.eventCategory === 'Education' ? 'selected' : '' %>>Education</option>
+                    <option value="Other" <%= formData && formData.eventCategory === 'Other' ? 'selected' : '' %>>Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="startDate">Start Date/Time</label>
+                <input type="datetime-local" class="form-control" id="startDate" name="startDate" value="<%= formData && formData.startDate ? formData.startDate : '' %>" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="endDate">End Date/Time</label>
+                <input type="datetime-local" class="form-control" id="endDate" name="endDate" value="<%= formData && formData.endDate ? formData.endDate : '' %>" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="eventLocation">Location</label>
+                <input type="text" class="form-control" id="eventLocation" name="eventLocation" value="<%= formData && formData.eventLocation ? he.decode(formData.eventLocation) : '' %>" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="eventImage">Event Image</label>
+                <input type="file" class="form-control-file" id="eventImage" name="eventImage" accept="image/*">
+            </div>
+            
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="noImage" name="noImage" <%= formData && formData.noImage ? 'checked' : '' %>>
+                <label for="noImage" class="form-check-label">No Image</label>
+            </div>
+            
+            <div class="form-group">
+                <label for="eventDescription">Event Description</label>
+                <textarea class="form-control" id="eventDescription" name="eventDescription" required><%= formData && formData.eventDescription ? he.decode(formData.eventDescription) : '' %></textarea>
+            </div>
+    
+            <div class="button-container">
+                <button type="submit">Submit</button>
+                <button type="reset">Clear</button>
+            </div>
+        </form>
+    </div>
+
+    <%- include('partials/footer') %>
+    <script src="/javascript/formValidation.js"></script>
+</body>
+</html>
+
+

@@ -1,12 +1,19 @@
 <footer>
-    <div class="footer">
-        <p class="some-text">&copy; 2024 Celestial Gatherings&nbsp; | &nbsp;<a href="/about">About</a>&nbsp; | &nbsp;<a href="/contact">Contact</a>&nbsp; | &nbsp;
-            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;
-            <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;
-            <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>&nbsp;&nbsp;
-            <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>&nbsp;&nbsp;
-            <a href="https://www.reddit.com/" target="_blank"><i class="fab fa-reddit-alien"></i></a>&nbsp;&nbsp;            
-        </p>
-    </div>
+  <div class="footer">
+    <p class="some-text">
+      &copy; <span id="year"></span> Celestial Gatherings&nbsp; | &nbsp;
+      <a href="/about">About</a>&nbsp; | &nbsp;
+      <a href="/contact">Contact</a>&nbsp; | &nbsp;
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;
+      <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;
+      <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>&nbsp;&nbsp;
+      <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>&nbsp;&nbsp;
+      <a href="https://www.reddit.com/" target="_blank"><i class="fab fa-reddit-alien"></i></a>&nbsp;&nbsp;
+    </p>
+  </div>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>

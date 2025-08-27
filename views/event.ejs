@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Detail - Celestial Gatherings</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Detail - Celestial Gatherings</title>
+
+  <link rel="stylesheet" href="/css/styles.css"/>
+
+  <!-- Libs -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body>
-    <%- include('partials/header') %>
-    <%- include('partials/nav') %>
+  <%- include('partials/header') %>
+  <%- include('partials/nav') %>
 
-    <div class="container">
-        <h1>Event Detail</h1>
-        <div class="divider"></div>
-        <img src="<%= event.image %>" alt="Event Image" class="img-fluid">
-        <h2><%= he.decode(event.title) %></h2>
-        <p><strong>Host:</strong> <%= event.host.firstName %> <%= event.host.lastName %></p>
-        <p><strong>Date/Time:</strong> <%= event.startDateTimeFormatted %> - <%= event.endDateTimeFormatted %></p>
-        <p><strong>Location:</strong> <%= he.decode(event.location) %></p>
-        <p><strong>Category:</strong> <%= event.category %></p>
-        <p><%= he.decode(event.details) %></p>
+  <div class="container">
+    <h1>Event Detail</h1>
+    <div class="divider"></div>
 
-        <div class="rsvp-section">
-            <h3>RSVP</h3>
-            <form action="/events/<%= event._id %>/rsvp" method="POST" aria-label="RSVP to this event">
-                <button type="submit" name="status" value="YES" class="btn btn-success rsvp-button" aria-label="RSVP Yes">
-                    ✔ <span class="sr-only">RSVP </span>Yes
-                </button>
-                <button type="submit" name="status" value="NO" class="btn btn-danger rsvp-button" aria-label="RSVP No">
-                    ✖ <span class="sr-only">RSVP </span>No
-                </button>
-                <button type="submit" name="status" value="MAYBE" class="btn btn-warning rsvp-button" aria-label="RSVP Maybe">
-                    ❓ <span class="sr-only">RSVP </span>Maybe
-                </button>
-            </form>
-            <p id="yesCount">Total 'Yes' RSVPs: <%= yesRSVPCount %></p>
-        </div>
+    <img src="<%= event.image %>" alt="Event Image" class="img-fluid" />
 
-    <%- include('partials/footer') %>
+    <h2><%= he.decode(event.title) %></h2>
+    <p><strong>Host:</strong> <%= event.host.firstName %> <%= event.host.lastName %></p>
+    <p><strong>Date/Time:</strong> <%= event.startDateTimeFormatted %> - <%= event.endDateTimeFormatted %></p>
+    <p><strong>Location:</strong> <%= he.decode(event.location) %></p>
+    <p><strong>Category:</strong> <%= event.category %></p>
+    <p><%= he.decode(event.details) %></p>
+
+    <div class="rsvp-section">
+      <h3>RSVP</h3>
+
+      <!-- Themed, accessible buttons (no emojis, no Bootstrap success/danger/warning colors) -->
+      <form action="/events/<%= event._id %>/rsvp" method="POST" class="rsvp-form" aria-label="RSVP to this event">
+        <button type="submit" name="status" value="YES" class="rsvp-button rsvp-yes" aria-label="RSVP Yes">Yes</button>
+        <button type="submit" name="status" value="NO" class="rsvp-button rsvp-no" aria-label="RSVP No">No</button>
+        <button type="submit" name="status" value="MAYBE" class="rsvp-button rsvp-maybe" aria-label="RSVP Maybe">Maybe</button>
+      </form>
+
+      <p id="yesCount">Total 'Yes' RSVPs: <%= yesRSVPCount %></p>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
 </body>
 </html>
+
 

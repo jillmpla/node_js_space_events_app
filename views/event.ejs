@@ -27,14 +27,19 @@
 
         <div class="rsvp-section">
             <h3>RSVP</h3>
-            <form action="/events/<%= event._id %>/rsvp" method="POST">
-                <button type="submit" name="status" value="YES" class="btn btn-success rsvp-button">Yes</button>
-                <button type="submit" name="status" value="NO" class="btn btn-danger rsvp-button">No</button>
-                <button type="submit" name="status" value="MAYBE" class="btn btn-warning rsvp-button">Maybe</button>
-            </form>            
-            <p>Total 'Yes' RSVPs: <%= yesRSVPCount %></p>
+            <form action="/events/<%= event._id %>/rsvp" method="POST" aria-label="RSVP to this event">
+                <button type="submit" name="status" value="YES" class="btn btn-success rsvp-button" aria-label="RSVP Yes">
+                    ✔ <span class="sr-only">RSVP </span>Yes
+                </button>
+                <button type="submit" name="status" value="NO" class="btn btn-danger rsvp-button" aria-label="RSVP No">
+                    ✖ <span class="sr-only">RSVP </span>No
+                </button>
+                <button type="submit" name="status" value="MAYBE" class="btn btn-warning rsvp-button" aria-label="RSVP Maybe">
+                    ❓ <span class="sr-only">RSVP </span>Maybe
+                </button>
+            </form>
+            <p id="yesCount">Total 'Yes' RSVPs: <%= yesRSVPCount %></p>
         </div>
-    </div>    
 
     <%- include('partials/footer') %>
 </body>

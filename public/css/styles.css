@@ -204,62 +204,61 @@ form button[type="reset"]:hover,
    RSVP Buttons
 ========================================================= */
 .rsvp-button {
-  min-width: 150px;
-  padding: 12px 20px;
-  font-size: 18px;
+  width: 200px;                
+  padding: 10px 16px;          
+  font-size: 16px;             
   font-weight: 600;
   border: none;
-  border-radius: 10px;
-  margin: 5px;
+  border-radius: 8px;
+  margin: 6px auto;              
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.2s ease;
-  position: relative;
-  text-decoration: none !important;
+  transition: background-color 0.25s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  color: #E0E1DD;                
+  text-align: center;
+  display: block;               
 }
 
 .rsvp-button::before {
-  content: none !important;
+  content: none !important;      
 }
 
 .rsvp-yes {
-  background-color: #4ECDC4; 
-  color: #0D1B2A;
+  background-color: #3FB7B0;     
 }
 .rsvp-yes:hover {
-  background-color: #3bb5ad;
-  box-shadow: 0 0 10px rgba(78,205,196,0.4);
+  background-color: #359b95;
+  box-shadow: 0 0 8px rgba(63,183,176,0.4);
 }
 
 .rsvp-no {
-  background-color: #415A77; 
-  color: #E0E1DD;
+  background-color: #415A77;     
 }
 .rsvp-no:hover {
   background-color: #2C3E50;
-  box-shadow: 0 0 10px rgba(65,90,119,0.4);
+  box-shadow: 0 0 8px rgba(65,90,119,0.4);
 }
 
 .rsvp-maybe {
-  background-color: #778DA9; 
-  color: #E0E1DD;
+  background-color: #778DA9;     
 }
 .rsvp-maybe:hover {
   background-color: #5a6f87;
-  box-shadow: 0 0 10px rgba(119,141,169,0.4);
+  box-shadow: 0 0 8px rgba(119,141,169,0.4);
 }
 
-/* Focus & Active states */
 .rsvp-button:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px #E0E1DD, 0 0 0 6px #A0C1D1;
 }
 .rsvp-button:active {
-  transform: translateY(2px);
+  transform: translateY(1px);
 }
 
 @media (max-width: 500px) {
   .rsvp-form {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
   }
 }

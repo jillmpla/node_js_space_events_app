@@ -62,5 +62,7 @@ A space-themed full-stack event management web application built with Node.js, E
 
 ---
 
-## 📄 License
-This project is licensed under the [MIT License](LICENSE).
+## 📜 License
+This project is licensed under the MIT License. See the [License](./LICENSE) file for details.
+
+## If you find this project useful, consider giving it a star! ⭐

@@ -212,27 +212,26 @@ form button[type="reset"]:hover,
 
 .rsvp-button {
   width: 180px;
-  padding: 10px 14px;
-  font-size: 15px;
+  padding: 12px 16px;
+  font-size: 17px;   
   font-weight: 600;
-  color: #E0E1DD;
-  background: #3C8D8A;
-  border: 1px solid rgba(13,27,42,0.08);
-  border-radius: 10px;
-  display: inline-block;
-  text-align: center;
+  border: none;
+  border-radius: 8px;
+  margin: 6px 0;
   cursor: pointer;
-  box-shadow: 0 6px 14px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.08);
-  transition: background-color .22s ease, box-shadow .22s ease, transform .08s ease, border-color .22s ease, filter .22s ease;
+  color: #E0E1DD;  
+  text-align: center;
+  display: inline-block;
+  transition: background-color .25s ease, transform .1s ease, box-shadow .2s ease;
 }
 
 .rsvp-button::before { content: none !important; }
 
 .rsvp-yes {
-  background-color: #3C8D8A;
+  background-color: #4A6FA5;  
 }
 .rsvp-yes:hover {
-  background-color: #337876;
+  background-color: #3F608F;
   box-shadow: 0 10px 22px rgba(0,0,0,.18), 0 4px 8px rgba(0,0,0,.10);
   transform: translateY(-1px);
 }
@@ -242,10 +241,10 @@ form button[type="reset"]:hover,
 }
 
 .rsvp-no {
-  background-color: #415A77;
+  background-color: #5C677D;  
 }
 .rsvp-no:hover {
-  background-color: #364C68;
+  background-color: #4D576A;
   box-shadow: 0 10px 22px rgba(0,0,0,.18), 0 4px 8px rgba(0,0,0,.10);
   transform: translateY(-1px);
 }
@@ -255,10 +254,11 @@ form button[type="reset"]:hover,
 }
 
 .rsvp-maybe {
-  background-color: #6F86A9;
+  background-color: #9AA0A6;  
+  color: #E0E1DD;
 }
 .rsvp-maybe:hover {
-  background-color: #5E7391;
+  background-color: #878D94;
   box-shadow: 0 10px 22px rgba(0,0,0,.18), 0 4px 8px rgba(0,0,0,.10);
   transform: translateY(-1px);
 }
@@ -269,12 +269,17 @@ form button[type="reset"]:hover,
 
 .rsvp-button:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px #E0E1DD, 0 0 0 6px #A0C1D1, 0 6px 14px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.08);
+  box-shadow: 0 0 0 3px #E0E1DD, 0 0 0 6px #A0C1D1,
+  0 6px 14px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.08);
 }
 
 /* motion sensitivity */
 @media (prefers-reduced-motion: reduce) {
   .rsvp-button { transition: none; }
+}
+
+.rsvp-button:last-of-type {
+  margin-bottom: 20px;
 }
 
 /* =========================================================

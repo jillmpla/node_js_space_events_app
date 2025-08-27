@@ -235,7 +235,7 @@ form button:not(.rsvp-button):focus-visible,
 
 .rsvp-maybe {
   background-color: #9AA0A6;  
-  color: #E0E1DD;
+  color: #FFFFFF;
 }
 .rsvp-maybe:hover {
   background-color: #878D94;

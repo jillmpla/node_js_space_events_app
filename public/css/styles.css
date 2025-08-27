@@ -275,67 +275,62 @@ hr.icon:after {
     background-color: #4E6E8E !important;
 }
 
-/* RSVP: stop global button styles from bleeding in */
-form button:not(.rsvp-button),
-.btn-reset {
-  padding: 10px;
-  cursor: pointer;
-  font-size: 18px !important;
-  width: 150px;
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  color: #E0E1DD !important;
-  background-color: #778DA9 !important;
-}
-
-/* remove the left color bar from RSVP buttons only */
-.rsvp-button::before { content: none !important; }
-
+/* === RSVP Buttons (theme-matched) === */
 .rsvp-button {
-  min-width: 160px;
-  padding: 12px 20px !important;
-  font-weight: 700;
-  border-radius: 8px !important;
-  border-width: 0 !important;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 10px;
-  transition: transform .02s ease, box-shadow .15s ease, filter .2s ease;
-  text-decoration: none !important;
+  min-width: 150px;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  margin: 5px;
+  cursor: pointer;
+  color: #E0E1DD;
+  background-color: #415A77; 
+  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.2s ease;
 }
 
-/* colors (accessibility-checked) */
-.rsvp-button.btn-success {
-  background-color: #1E7F3F !important; 
+.rsvp-yes {
+  background-color: #4ECDC4; 
+  color: #0D1B2A;
 }
-.rsvp-button.btn-success:hover { filter: brightness(0.95); }
-
-.rsvp-button.btn-danger {
-  background-color: #B00020 !important;
+.rsvp-yes:hover {
+  background-color: #3bb5ad;
+  box-shadow: 0 0 10px rgba(78,205,196,0.4);
 }
-.rsvp-button.btn-danger:hover { filter: brightness(0.95); }
 
-.rsvp-button.btn-warning {
-  background-color: #B88600 !important; 
-  color: #111111 !important;
+.rsvp-no {
+  background-color: #415A77;
+  color: #E0E1DD;
 }
-.rsvp-button.btn-warning:hover { filter: brightness(0.95); }
+.rsvp-no:hover {
+  background-color: #2C3E50;
+  box-shadow: 0 0 10px rgba(65,90,119,0.4);
+}
 
-/* focus ring for keyboard users */
+.rsvp-maybe {
+  background-color: #778DA9;
+  color: #E0E1DD;
+}
+.rsvp-maybe:hover {
+  background-color: #5a6f87;
+  box-shadow: 0 0 10px rgba(119,141,169,0.4);
+}
+
 .rsvp-button:focus-visible {
-  outline: 3px solid #FFFFFF;
-  box-shadow: 0 0 0 6px #415A77;
+  outline: none;
+  box-shadow: 0 0 0 3px #E0E1DD, 0 0 0 6px #A0C1D1;
 }
 
-/* pressed feel */
-.rsvp-button:active { transform: translateY(1px); }
+.rsvp-button:active {
+  transform: translateY(2px);
+}
 
-/* stack nicely on small screens */
 @media (max-width: 500px) {
-  .rsvp-section form { display: grid; gap: 10px; }
+  .rsvp-form {
+    display: grid;
+    gap: 10px;
+  }
 }
 
 

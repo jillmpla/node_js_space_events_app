@@ -344,5 +344,12 @@ hr.icon:after {
   margin-left: .65rem !important;
 }
 
+.container > .img-fluid {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 
 

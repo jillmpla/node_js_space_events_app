@@ -32,14 +32,11 @@
 
     <div class="rsvp-section">
       <h3>RSVP</h3>
-
-      <!-- Themed, accessible buttons (no emojis, no Bootstrap success/danger/warning colors) -->
       <form action="/events/<%= event._id %>/rsvp" method="POST" class="rsvp-form" aria-label="RSVP to this event">
-        <button type="submit" name="status" value="YES" class="rsvp-button rsvp-yes" aria-label="RSVP Yes">Yes</button>
-        <button type="submit" name="status" value="NO" class="rsvp-button rsvp-no" aria-label="RSVP No">No</button>
-        <button type="submit" name="status" value="MAYBE" class="rsvp-button rsvp-maybe" aria-label="RSVP Maybe">Maybe</button>
+        <button type="submit" name="status" value="YES" class="rsvp-button rsvp-yes">Yes</button>
+        <button type="submit" name="status" value="NO" class="rsvp-button rsvp-no">No</button>
+        <button type="submit" name="status" value="MAYBE" class="rsvp-button rsvp-maybe">Maybe</button>
       </form>
-
       <p id="yesCount">Total 'Yes' RSVPs: <%= yesRSVPCount %></p>
     </div>
   </div>

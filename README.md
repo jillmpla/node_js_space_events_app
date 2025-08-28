@@ -8,7 +8,7 @@ A space-themed full-stack event management web application built with Node.js, E
 
 ## ✨ Features
 
-- **Event Management**: Full CRUD functionality for creating, editing, viewing, and deleting space-related events
+- **Event Management**: Full CRUD functionality for creating, editing, viewing, and deleting space-related events  
 - **RSVP System**: RSVP options with logic to prevent hosts from RSVPing to their own events
 - **Authentication & Authorization**: Secure user login, registration, and role-based access control
 - **Image Upload**: Cloudinary integration via Multer for storing event images

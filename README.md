@@ -11,22 +11,22 @@ The app combines **robust backend functionality** with a **clean, responsive UI/
 ## ✨ Core Functionality
 
 - **Event Management**  
-  Create, edit, and manage events with full CRUD capabilities. Each event includes title, category, location, description, start/end dates, and optional image.  
+  Create, edit, and manage events with full CRUD capabilities. Each event includes title, category, location, description, start/end dates, and optional image.
 
 - **RSVP System**  
-  Guests can RSVP with `YES / NO / MAYBE`. Hosts are prevented from RSVPing to their own events, keeping data clean and meaningful.  
+  Registered users can RSVP `YES / NO / MAYBE`. Hosts are prevented from RSVPing to their own events to keep data clean and meaningful.
 
 - **Authentication & Profiles**  
-  Secure sign-up and login with session-based authentication. Logged-in users can view their profile, hosted events, and RSVPs.  
+  Secure sign-up and login with session-based auth. Logged-in users can view their profile, hosted events, and RSVPs.
 
 - **Image Hosting**  
-  Upload event images via **Cloudinary** (with Multer). If no image is uploaded, a placeholder is used.  
+  Upload event images via **Cloudinary** (with Multer). If no image is uploaded, a placeholder is used.
 
 - **User Feedback**  
-  Flash messages and custom error pages provide clear guidance for all success, warning, and error states.  
+  Flash messages and custom error pages provide clear guidance for success, warning, and error states.
 
 - **Responsive UI/UX**  
-  Designed with usability in mind: a dark space-inspired theme, accessible form styles, visible focus states, and a navigation flow that adapts to whether you're a guest or logged-in user.  
+  Space-inspired theme with accessible forms, visible focus states, and navigation that adapts to login state.
 
 ---
 
@@ -36,25 +36,26 @@ The app combines **robust backend functionality** with a **clean, responsive UI/
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB Atlas with Mongoose
 - **Authentication**: `express-session` + `connect-mongo` session storage
-- **File Uploads**: Multer + Cloudinary
-- **Validation & Security**: express-validator, Helmet, express-rate-limit, bcrypt.js
-- **Utilities**: Luxon (date/time), he (HTML entity encoding), validator
+- **File Uploads**: Multer + Cloudinary (`multer-storage-cloudinary`)
+- **Validation & Security**: express-validator, validator, Helmet, express-rate-limit, bcryptjs
+- **Performance & Logging**: compression, morgan
+- **Utilities**: Luxon (date/time), he (optional HTML entity encoding)
 
 ---
 
 ## 🔐 Authentication & Authorization
 
 - **Guests** can:
-  - Browse events  
-  - RSVP to events  
+  - Browse events
 
 - **Registered Users** can:
-  - Sign up / log in securely  
-  - Host new events  
-  - Edit or delete events they created  
-  - Manage RSVPs  
+  - Sign up / log in securely
+  - RSVP to events
+  - Host new events
+  - Edit or delete events they created
+  - Manage RSVPs
 
-- **Authorization** middleware ensures that only event hosts can modify their own events.
+- **Authorization** middleware ensures only event hosts can modify their own events.
 
 ---
 
@@ -64,19 +65,19 @@ The app combines **robust backend functionality** with a **clean, responsive UI/
 - **Accessible forms** with visible focus states, proper input validation, and keyboard-friendly navigation  
 - **Dynamic header navigation**: changes based on login state (Sign Up/Login vs. Profile/New Event/Logout)  
 - **Custom error views**: informative 400, 401, 404, and 500 pages  
-- **Responsive layouts**: looks great on desktop, tablet, and mobile  
+- **Responsive layouts**: looks great on desktop, tablet, and mobile
 
 ---
 
 ## 🧪 Validation & Error Handling
 
-- Uses **express-validator** to sanitize and validate form input  
+- Uses **express-validator** to validate/sanitize form input  
 - Passwords are hashed securely with bcrypt before storage  
 - Friendly error pages for:
   - Invalid IDs  
   - Unauthorized access  
   - Missing resources  
-  - Server/database errors  
+  - Server/database errors
 
 ---
 
@@ -86,6 +87,8 @@ The app combines **robust backend functionality** with a **clean, responsive UI/
 - Auth/Security: `bcryptjs`, `express-rate-limit`, `helmet`, `validator`
 - File Uploads: `multer`, `multer-storage-cloudinary`, `cloudinary`
 - Validation/Formatting: `express-validator`, `luxon`, `he`
+- UX/Feedback: `connect-flash`
+- Performance/Logging: `compression`, `morgan`
 
 ---
 

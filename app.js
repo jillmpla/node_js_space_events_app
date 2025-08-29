@@ -18,6 +18,13 @@ const isProd = process.env.NODE_ENV === 'production';
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+//security & performance
+app.use(helmet({
+    contentSecurityPolicy: false,
+    crossOriginResourcePolicy: { policy: 'cross-origin' }
+}));
+app.use(compression());
+
 //static
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -25,10 +32,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(morgan(isProd ? 'combined' : 'dev'));
-
-//security & performance
-app.use(helmet({ contentSecurityPolicy: false }));
-app.use(compression());
 
 //DB
 const dbURI = process.env.MONGODB_URI;

@@ -5,6 +5,7 @@ Celestial Gatherings is a **space-themed event management platform** that makes 
 The app combines **robust backend functionality** with a **clean, responsive UI/UX**, giving users everything they need to plan astronomy meetups, science talks, watch parties, or any gathering that feels *out of this world*. 🚀
 
 🔗 **Live Demo:** [celestialgatherings.com](https://www.celestialgatherings.com)  
+>📌 *Note: Demo resets daily.*
 
 ---
 
@@ -93,7 +94,14 @@ The app combines **robust backend functionality** with a **clean, responsive UI/
 ---
 
 ## 🧱 Project Structure (MVC)
-This codebase follows the Model-View-Controller (MVC) pattern: **Models** define data and rules (Mongoose), **Views** render the UI (EJS), and **Controllers** handle request/response logic. **Routes** map URLs to controller actions, while **middlewares** provide cross-cutting concerns like auth/role checks. This separation keeps the app maintainable, testable, and easy to extend as features grow.
+This codebase follows the Model-View-Controller (MVC) pattern. This keeps the app maintainable, testable, and easy to extend.
+
+- **Models (Mongoose):** data schema + validation.
+- **Views (EJS):** server-rendered HTML templates.
+- **Controllers (Express):** request in → response out.
+- **Routes:** HTTP method + path → controller.
+- **Middleware:** pre-route logic (auth/sessions/logging).
+
 ```bash
 ├─ app.js                         #app entrypoint: Express config, sessions, MongoDB, routes, views
 ├─ middlewares.js                 #auth/role checks (isAuthenticated, isGuest, isHost/isNotHost)

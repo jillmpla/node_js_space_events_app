@@ -90,8 +90,8 @@ The app combines **robust backend functionality** with a **clean, responsive UI/
 ---
 
 ## 🧱 Project Structure (MVC)
-This codebase follows the Model–View–Controller (MVC) pattern: **Models** define data and rules (Mongoose), **Views** render the UI (EJS), and **Controllers** handle request/response logic. **Routes** map URLs to controller actions, while **middlewares** provide cross-cutting concerns like auth/role checks. This separation keeps the app maintainable, testable, and easy to extend as features grow.
-
+This codebase follows the Model-View-Controller (MVC) pattern: **Models** define data and rules (Mongoose), **Views** render the UI (EJS), and **Controllers** handle request/response logic. **Routes** map URLs to controller actions, while **middlewares** provide cross-cutting concerns like auth/role checks. This separation keeps the app maintainable, testable, and easy to extend as features grow.
+```bash
 ├─ app.js                         #app entrypoint: Express config, sessions, MongoDB, routes, views
 ├─ middlewares.js                 #auth/role checks (isAuthenticated, isGuest, isHost/isNotHost)
 ├─ controllers/                   #controllers (request handlers)
@@ -129,7 +129,7 @@ This codebase follows the Model–View–Controller (MVC) pattern: **Models** de
 │  └─ javascript/                 #client-side scripts
 ├─ package.json
 └─ package-lock.json
-
+```
 ---
 
 ## 🚀 Getting Started (Local Dev)

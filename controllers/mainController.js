@@ -1,3 +1,4 @@
+//controllers/mainController.js
 exports.home = (req, res) => {      //render homepage
     res.render('index');
 };

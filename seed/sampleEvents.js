@@ -1,3 +1,4 @@
+//seed/sampleEvents.js
 const events = [
   {
     id: 1,

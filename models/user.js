@@ -1,14 +1,16 @@
+//models/user.js
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const validator = require('validator');
 
 const userSchema = new mongoose.Schema({
-    firstName: { type: String, required: true, trim: true, escape: true },
-    lastName:  { type: String, required: true, trim: true, escape: true },
+    firstName: { type: String, required: true, trim: true },
+    lastName:  { type: String, required: true, trim: true },
     email: {
         type: String,
         required: true,
         unique: true,
+        index: true,
         trim: true,
         lowercase: true,
         validate: [validator.isEmail, 'Invalid email']
@@ -35,9 +37,11 @@ userSchema.pre('save', async function (next) {
     }
 });
 
-//instance method to compare a candidate password
+//compare a candidate password
 userSchema.methods.comparePassword = function (candidate) {
     return bcrypt.compare(candidate, this.password);
 };
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.models.User || mongoose.model('User', userSchema);
+
+

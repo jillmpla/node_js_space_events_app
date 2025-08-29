@@ -1,25 +1,18 @@
+//models/eventModel.js
 const mongoose = require('mongoose');
-const validator = require('validator');
-const { DateTime } = require('luxon');
 
 const eventSchema = new mongoose.Schema({
-    title: { type: String, required: true, trim: true, escape: true },
-    category: {
-        type: String,
-        required: true,
-        enum: ['Astronomy', 'Science', 'Space', 'Education', 'Other']
-    },
+    title:     { type: String, required: true, trim: true },
+    category:  { type: String, required: true, enum: ['Astronomy', 'Science', 'Space', 'Education', 'Other'] },
     startDateTime: {
         type: Date,
         required: true,
         validate: {
             validator: function (value) {
-                return (
-                    validator.isISO8601(value.toISOString()) &&
-                    validator.isAfter(value.toISOString(), DateTime.now().toISO())
-                );
+                if (this.isSeed) return true;
+                return value instanceof Date && value.getTime() > Date.now();
             },
-            message: 'Start date must be a valid ISO 8601 date and after today.'
+            message: 'Start date must be after now.'
         }
     },
     endDateTime: {
@@ -27,18 +20,23 @@ const eventSchema = new mongoose.Schema({
         required: true,
         validate: {
             validator: function (value) {
-                return validator.isISO8601(value.toISOString()) && value > this.startDateTime;
+                if (this.isSeed) return true;
+                return value instanceof Date && this.startDateTime && value.getTime() > this.startDateTime.getTime();
             },
-            message: 'End date must be a valid ISO 8601 date and after the start date.'
+            message: 'End date must be after the start date.'
         }
     },
-    location: { type: String, required: true, trim: true, escape: true },
-    details: { type: String, required: true, trim: true, escape: true },
-    image: { type: String },
-    host: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    location:  { type: String, required: true, trim: true },
+    details:   { type: String, required: true, trim: true },
+    image:     { type: String },
+    host:      { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
 
-    isSeed: { type: Boolean, default: false, index: true }
+    isSeed:    { type: Boolean, default: false, index: true }
 }, { timestamps: true });
+
+eventSchema.index({ startDateTime: 1 });
+eventSchema.index({ category: 1 });
+eventSchema.index({ host: 1 });
 
 module.exports = mongoose.models.Event || mongoose.model('Event', eventSchema);
 

@@ -40,6 +40,7 @@
     "express-session": "^1.18.0",
     "express-validator": "^7.1.0",
     "he": "^1.2.0",
+    "helmet": "^8.1.0",
     "luxon": "^3.4.4",
     "mongoose": "^8.4.1",
     "morgan": "^1.10.0",
@@ -51,4 +52,3 @@
     "nodemon": "^3.1.0"
   }
 }
-

@@ -2,7 +2,7 @@
 
 Celestial Gatherings is a **space-themed event management platform** that makes it easy to create, share, and join events under the stars. Built with **Node.js, Express.js, MongoDB Atlas, and EJS**, it follows the MVC pattern and provides a smooth, secure experience for both event hosts and guests.  
 
-The app combines **robust backend functionality** with a **clean, responsive UI/UX**, giving users everything they need to plan astronomy meetups, science talks, watch parties, or any gathering that feels *out of this world*. 🚀
+The app combines **robust backend functionality** with a **clean, responsive UI/UX**, giving users everything they need to plan astronomy meetups, science talks, watch parties, or any gathering that feels *out of this world*.
 
 🔗 **Live Demo:** [celestialgatherings.com](https://www.celestialgatherings.com)  
 >📌 *Note: Demo resets daily.*

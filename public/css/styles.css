@@ -137,7 +137,7 @@ form button:focus-visible,
     padding: 20px;
     flex: 1;
     background: transparent;
-    color: var(--txt-light);
+    color: #212529;
     border-radius: 0;
     box-shadow: none;
     overflow: visible;
@@ -324,7 +324,7 @@ form button:not(.rsvp-button):active,
     .rsvp-button { transition: none; }
 }
 
-.rsvp-button:last-of-type { margin-bottom: 5px; }
+.rsvp-button:last-of-type { margin-bottom: 3px; }
 
 /* =========================================================
    Flash Alerts
@@ -431,8 +431,7 @@ hr.icon:after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     font-size: 2rem;
-    /*background-color: var(--container-bg);*/
-    background-color: var(--bg-body);
+    background-color: var(--container-bg);
 }
 
 /* =========================================================

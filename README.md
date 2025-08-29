@@ -20,13 +20,13 @@ The app combines **robust backend functionality** with a **clean, responsive UI/
   Secure sign-up and login with session-based authentication. Logged-in users can view their profile, hosted events, and RSVPs.  
 
 - **Image Hosting**  
-  Upload event images via **Cloudinary** (with Multer). If no image is uploaded, a space-themed placeholder is used.  
+  Upload event images via **Cloudinary** (with Multer). If no image is uploaded, a placeholder is used.  
 
 - **User Feedback**  
   Flash messages and custom error pages provide clear guidance for all success, warning, and error states.  
 
 - **Responsive UI/UX**  
-  Designed with usability in mind: a dark space-inspired theme, accessible form styles, visible focus states, and a navigation flow that adapts to whether you’re a guest or logged-in user.  
+  Designed with usability in mind: a dark space-inspired theme, accessible form styles, visible focus states, and a navigation flow that adapts to whether you're a guest or logged-in user.  
 
 ---
 
@@ -64,7 +64,7 @@ The app combines **robust backend functionality** with a **clean, responsive UI/
 - **Accessible forms** with visible focus states, proper input validation, and keyboard-friendly navigation  
 - **Dynamic header navigation**: changes based on login state (Sign Up/Login vs. Profile/New Event/Logout)  
 - **Custom error views**: informative 400, 401, 404, and 500 pages  
-- **Responsive layouts**: looks great on desktop and mobile  
+- **Responsive layouts**: looks great on desktop, tablet, and mobile  
 
 ---
 
@@ -86,6 +86,49 @@ The app combines **robust backend functionality** with a **clean, responsive UI/
 - Auth/Security: `bcryptjs`, `express-rate-limit`, `helmet`, `validator`
 - File Uploads: `multer`, `multer-storage-cloudinary`, `cloudinary`
 - Validation/Formatting: `express-validator`, `luxon`, `he`
+
+---
+
+## 🧱 Project Structure (MVC)
+This codebase follows the Model–View–Controller (MVC) pattern: **Models** define data and rules (Mongoose), **Views** render the UI (EJS), and **Controllers** handle request/response logic. **Routes** map URLs to controller actions, while **middlewares** provide cross-cutting concerns like auth/role checks. This separation keeps the app maintainable, testable, and easy to extend as features grow.
+
+├─ app.js                         #app entrypoint: Express config, sessions, MongoDB, routes, views
+├─ middlewares.js                 #auth/role checks (isAuthenticated, isGuest, isHost/isNotHost)
+├─ controllers/                   #controllers (request handlers)
+│  ├─ mainController.js           #home/about/contact
+│  ├─ userController.js           #auth, profile
+│  └─ eventController.js          #event CRUD, RSVP
+├─ models/                        #models (Mongoose schemas)
+│  ├─ user.js
+│  ├─ eventModel.js
+│  └─ rsvp.js
+├─ routes/                        #express routers
+│  ├─ mainRoutes.js
+│  ├─ userRoutes.js
+│  └─ eventRoutes.js
+├─ views/                         #views (EJS templates)
+│  ├─ about.ejs
+│  ├─ contact.ejs -
+│  ├─ edit.ejs -
+│  ├─ error.ejs
+│  ├─ event.ejs -
+│  ├─ events.ejs
+│  ├─ index.ejs
+│  ├─ login.ejs
+│  ├─ newEvent.ejs
+│  ├─ profile.ejs
+│  ├─ signup.ejs -
+│  └─ partials/                   #shared UI
+│     ├─ header.ejs
+│     ├─ footer.ejs
+│     └─ nav.ejs
+├─ public/                        #static assets served by Express
+│  ├─ css/
+│  │  └─ styles.css
+│  ├─ images/
+│  └─ javascript/                 #client-side scripts
+├─ package.json
+└─ package-lock.json
 
 ---
 

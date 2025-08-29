@@ -1,7 +1,8 @@
 <header>
-    <a href="/">
+    <a href="/" aria-label="Celestial Gatherings Home">
         <img src="/images/logo.png" alt="Celestial Gatherings Logo" class="logo">
     </a>
+
     <div class="user-nav">
         <% if (!user) { %>
             <a href="/user/signup">Sign Up</a>&nbsp; | &nbsp;
@@ -9,10 +10,15 @@
         <% } else { %>
             <a href="/events/new">New Event</a>&nbsp; | &nbsp;
             <a href="/user/profile"><%= user.firstName %>'s Profile</a>&nbsp; | &nbsp;
-            <a href="/user/logout">Log Out</a>
+            <form action="/user/logout" method="POST" style="display:inline">
+                <button type="submit" class="link-button" aria-label="Log out" style="background:none;border:none;padding:0;color:inherit;cursor:pointer;">
+                    Log Out
+                </button>
+            </form>
         <% } %>
     </div>
 </header>
+
 
 
 

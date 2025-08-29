@@ -1,64 +1,126 @@
 # 🌌 Celestial Gatherings
 
-A space-themed full-stack event management web application built with Node.js, Express.js, EJS, and MongoDB Atlas. Designed with the MVC architecture, it allows users to create, view, edit, RSVP to, and manage events with full authentication, image hosting, and a user-friendly UI.
+Celestial Gatherings is a **space-themed event management platform** that makes it easy to create, share, and join events under the stars. Built with **Node.js, Express.js, MongoDB Atlas, and EJS**, it follows the MVC pattern and provides a smooth, secure experience for both event hosts and guests.  
+
+The app combines **robust backend functionality** with a **clean, responsive UI/UX**, giving users everything they need to plan astronomy meetups, science talks, watch parties, or any gathering that feels *out of this world*. 🚀
 
 🔗 **Live Demo:** [celestialgatherings.com](https://www.celestialgatherings.com)  
 
 ---
 
-## ✨ Features
+## ✨ Core Functionality
 
-- **Event Management**: Full CRUD functionality for creating, editing, viewing, and deleting space-related events  
-- **RSVP System**: RSVP options with logic to prevent hosts from RSVPing to their own events
-- **Authentication & Authorization**: Secure user login, registration, and role-based access control
-- **Image Upload**: Cloudinary integration via Multer for storing event images
-- **Session Management**: Persistent sessions using `express-session` and `connect-mongo`
-- **Flash Messaging**: Feedback messages for success and error states
-- **Error Handling**: Custom error pages for common issues (400, 401, 404, 500)
-- **Security**: Input validation, rate limiting, secure HTTP headers (Helmet), and XSS prevention
-- **Responsive UI**: EJS-based front-end rendered dynamically based on user state
+- **Event Management**  
+  Create, edit, and manage events with full CRUD capabilities. Each event includes title, category, location, description, start/end dates, and optional image.  
+
+- **RSVP System**  
+  Guests can RSVP with `YES / NO / MAYBE`. Hosts are prevented from RSVPing to their own events, keeping data clean and meaningful.  
+
+- **Authentication & Profiles**  
+  Secure sign-up and login with session-based authentication. Logged-in users can view their profile, hosted events, and RSVPs.  
+
+- **Image Hosting**  
+  Upload event images via **Cloudinary** (with Multer). If no image is uploaded, a space-themed placeholder is used.  
+
+- **User Feedback**  
+  Flash messages and custom error pages provide clear guidance for all success, warning, and error states.  
+
+- **Responsive UI/UX**  
+  Designed with usability in mind: a dark space-inspired theme, accessible form styles, visible focus states, and a navigation flow that adapts to whether you’re a guest or logged-in user.  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: EJS, Bootstrap, HTML, CSS
+- **Frontend**: EJS templates, Bootstrap 4, custom CSS (space-inspired theme)
 - **Backend**: Node.js, Express.js
-- **Database**: MongoDB Atlas
-- **Authentication**: Sessions with MongoDB storage
+- **Database**: MongoDB Atlas with Mongoose
+- **Authentication**: `express-session` + `connect-mongo` session storage
 - **File Uploads**: Multer + Cloudinary
+- **Validation & Security**: express-validator, Helmet, express-rate-limit, bcrypt.js
+- **Utilities**: Luxon (date/time), he (HTML entity encoding), validator
 
 ---
 
-## 🔐 Authentication
-- Users can register and log in
-- Hosts can create/edit/delete events
-- Guests can view and RSVP to events
+## 🔐 Authentication & Authorization
+
+- **Guests** can:
+  - Browse events  
+  - RSVP to events  
+
+- **Registered Users** can:
+  - Sign up / log in securely  
+  - Host new events  
+  - Edit or delete events they created  
+  - Manage RSVPs  
+
+- **Authorization** middleware ensures that only event hosts can modify their own events.
 
 ---
 
-## 📸 Cloudinary Integration
-- Image uploads are handled through Multer and stored on Cloudinary
-- Events can have a custom image or use a default placeholder
+## 🧑‍🎨 UI/UX Design
+
+- **Space-inspired theme** with deep blues and cosmic accents  
+- **Accessible forms** with visible focus states, proper input validation, and keyboard-friendly navigation  
+- **Dynamic header navigation**: changes based on login state (Sign Up/Login vs. Profile/New Event/Logout)  
+- **Custom error views**: informative 400, 401, 404, and 500 pages  
+- **Responsive layouts**: looks great on desktop and mobile  
 
 ---
 
 ## 🧪 Validation & Error Handling
-- Uses `express-validator` to ensure all form inputs are clean and well-formatted
-- All major HTTP errors have custom views with friendly messages
+
+- Uses **express-validator** to sanitize and validate form input  
+- Passwords are hashed securely with bcrypt before storage  
+- Friendly error pages for:
+  - Invalid IDs  
+  - Unauthorized access  
+  - Missing resources  
+  - Server/database errors  
 
 ---
 
 ## 📚 Key Libraries
-- `express`
-- `mongoose`
-- `cloudinary`
-- `multer` / `multer-storage-cloudinary`
-- `express-session` / `connect-mongo`
-- `express-validator`
-- `he` (HTML entity encoding)
-- `luxon` (date formatting)
-- `helmet` / `express-rate-limit` / `validator`
+
+- Backend: `express`, `mongoose`, `express-session`, `connect-mongo`
+- Auth/Security: `bcryptjs`, `express-rate-limit`, `helmet`, `validator`
+- File Uploads: `multer`, `multer-storage-cloudinary`, `cloudinary`
+- Validation/Formatting: `express-validator`, `luxon`, `he`
+
+---
+
+## 🚀 Getting Started (Local Dev)
+
+1) Clone repository
+
+```bash
+git clone https://github.com/yourusername/celestial-gatherings.git
+cd celestial-gatherings
+```
+
+2) Install dependencies
+
+```bash
+npm install
+```
+
+3) Create a .env file with your keys
+
+```bash
+MONGODB_URI=...
+SECRET_KEY=...
+CLOUDINARY_CLOUD_NAME=...
+CLOUDINARY_API_KEY=...
+CLOUDINARY_API_SECRET=...
+```
+
+4) Run the app
+
+```bash
+npm start
+```
+
+5) Visit: http://localhost:3000
 
 ---
 

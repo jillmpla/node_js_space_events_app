@@ -35,6 +35,7 @@ Icon?
 ehthumbs.db
 
 #Editors / IDEs
+*.iml
 .idea/
 .vscode/*
 
@@ -73,3 +74,4 @@ playwright-report/
 test-results/
 cypress/screenshots/
 cypress/videos/
+

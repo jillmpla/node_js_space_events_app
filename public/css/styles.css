@@ -136,11 +136,11 @@ form button:focus-visible,
     margin: 0 auto;
     padding: 20px;
     flex: 1;
-    background-color: var(--container-bg);
-    color: #212529;
-    overflow: auto;
-    border-radius: 10px;
-    box-shadow: var(--shadow-lg);
+    background: transparent;
+    color: var(--txt-light);
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
 }
 
 .divider {
@@ -431,7 +431,8 @@ hr.icon:after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     font-size: 2rem;
-    background-color: var(--container-bg);
+    /*background-color: var(--container-bg);*/
+    background-color: var(--bg-body);
 }
 
 /* =========================================================

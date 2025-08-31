@@ -1,0 +1,97 @@
+body.error {
+    background: var(--surface);
+    color: var(--txt-dark);
+}
+
+.error-page {
+    text-align: center;
+    margin: 16px auto 40px;
+}
+
+.err-hero {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    background:
+            radial-gradient(900px 300px at 50% -10%, rgba(65,90,119,.08), rgba(0,0,0,0) 70%),
+            #fff;
+}
+
+.err-badge {
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(65,90,119,.12);
+    color: var(--bg-primary);
+    font-size: 1.6rem;
+    margin: 0 auto 12px;
+}
+
+.err-title {
+    margin: 0 0 .35rem;
+    color: #111;
+}
+
+.err-code {
+    display: block;
+    font-family: 'Orbitron', system-ui, sans-serif;
+    font-size: clamp(2.5rem, 4vw + 1rem, 4rem);
+    line-height: 1;
+    letter-spacing: .02em;
+    margin-bottom: .2rem;
+}
+
+.err-title-text {
+    display: block;
+    font-family: 'Platypi', serif;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 1vw + 1rem, 2rem);
+}
+
+.err-message {
+    font-size: clamp(1.1rem, .6vw + 1rem, 1.35rem);
+    color: var(--muted);
+    margin: 0 0 1rem;
+}
+
+.err-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+.error .btn-outline {
+    background: transparent;
+    color: var(--bg-primary);
+    border: 2px solid var(--bg-primary);
+    border-radius: 10px;
+    padding: 12px 18px;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    transition: background-color .18s ease, box-shadow .18s ease, transform .06s ease;
+}
+.error .btn-outline:hover { color: #fff; background: var(--bg-primary); box-shadow: var(--shadow-sm); }
+.error .btn-outline:active { transform: translateY(0); box-shadow: var(--shadow-sm); }
+
+.error :where(a.btn-outline):focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px #E0E1DD, 0 0 0 6px #A0C1D1;
+}
+
+@media (max-width: 640px) {
+    .err-hero { padding: 24px 16px; }
+    .err-badge { width: 56px; height: 56px; font-size: 1.4rem; }
+    .err-code { font-size: 2.6rem; }
+}
+

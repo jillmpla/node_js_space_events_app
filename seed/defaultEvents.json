@@ -1,0 +1,123 @@
+[
+  {
+    "title": "Astronaut Training",
+    "category": "Space",
+    "location": "Central Park, NY",
+    "details": "Experience what it takes to become an astronaut with hands-on training exercises and simulations. This event offers a unique glimpse into the rigorous preparation required for space missions.",
+    "startDateTime": "2035-01-01T13:00:00.000Z",
+    "endDateTime": "2035-01-01T21:00:00.000Z",
+    "image": "/images/use4.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
+    "title": "Moon Landing Anniversary",
+    "category": "Space",
+    "location": "Griffith Observatory, Los Angeles, CA",
+    "details": "Celebrate the anniversary of the first moon landing! This event will feature a live presentation on the Apollo missions, followed by a viewing of the moon through the observatory&#x27;s telescopes. Attendees will also have the opportunity to participate in a Q&amp;A session with space historians.",
+    "startDateTime": "2035-07-20T20:00:00.000Z",
+    "endDateTime": "2035-07-20T23:00:00.000Z",
+    "image": "/images/use6.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
+    "title": "Journey Through the Cosmos",
+    "category": "Education",
+    "location": "Central Park, NY",
+    "details": "Learn about the formation of stars, the mysteries of black holes, and the future of space exploration. Suitable for students, educators, and space enthusiasts of all ages, this event aims to inspire and educate through the wonders of our universe.",
+    "startDateTime": "2035-07-31T18:00:00.000Z",
+    "endDateTime": "2035-07-31T20:00:00.000Z",
+    "image": "/images/use5.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
+    "title": "Lunar Exploration",
+    "category": "Space",
+    "location": "NASA Space Center, Houston, TX",
+    "details": "Join us for an in-depth look at the history and future of lunar exploration. This event will cover past missions to the moon, current lunar research, and upcoming missions planned by various space agencies. Participants will also get to see moon rocks and other lunar artifacts.",
+    "startDateTime": "2035-08-05T18:00:00.000Z",
+    "endDateTime": "2035-08-05T23:00:00.000Z",
+    "image": "/images/use7.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
+    "title": "Moon Observation Night",
+    "category": "Astronomy",
+    "location": "Central Park, NY",
+    "details": "Explore the lunar landscape and marvel at the beauty of the Moon. This event is suitable for all ages and promises an unforgettable experience under the moonlit sky.",
+    "startDateTime": "2035-08-26T03:00:00.000Z",
+    "endDateTime": "2035-08-25T07:00:00.000Z",
+    "image": "/images/use3.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
+    "title": "The Moon&#x27;s Mysteries",
+    "category": "Astronomy",
+    "location": "American Museum of Natural History, New York, NY",
+    "details": "Explore the mysteries of the moon! This event will delve into the moon&#x27;s formation, its phases, and its impact on Earth. The evening will conclude with a special planetarium show focusing on lunar phenomena.",
+    "startDateTime": "2035-09-16T02:00:00.000Z",
+    "endDateTime": "2035-09-16T03:00:00.000Z",
+    "image": "/images/use8.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
+    "title": "Star Gazing at the Park",
+    "category": "Astronomy",
+    "location": "Central Park, NY",
+    "details": "Participants will have the opportunity to explore the wonders of the night sky using high-quality telescopes. This event is perfect for both seasoned star gazers and newcomers alike, offering a chance to learn about constellations, planets, and other celestial phenomena.",
+    "startDateTime": "2035-10-16T02:00:00.000Z",
+    "endDateTime": "2035-10-15T04:00:00.000Z",
+    "image": "/images/use1.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
+    "title": "Women in Space",
+    "category": "Other",
+    "location": "Smithsonian National Air and Space Museum, Washington, D.C.",
+    "details": "Celebrate the contributions of women in space exploration at this inspiring event. Hear from female astronauts, engineers, and scientists about their experiences and achievements. The event will also feature a panel discussion on the future of women in space missions.",
+    "startDateTime": "2035-11-04T15:00:00.000Z",
+    "endDateTime": "2035-11-04T18:00:00.000Z",
+    "image": "/images/use10.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
+    "title": "Meteor Shower Watching",
+    "category": "Astronomy",
+    "location": "Central Park, NY",
+    "details": "Join us for an unforgettable night as we observe a spectacular meteor shower. This event offers a unique opportunity to witness a breathtaking display of shooting stars.",
+    "startDateTime": "2035-11-12T04:00:00.000Z",
+    "endDateTime": "2035-11-12T07:00:00.000Z",
+    "image": "/images/use2.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
+    "title": "The Future of Space Tourism",
+    "category": "Space",
+    "location": "SpaceX Headquarters, Hawthorne, CA",
+    "details": "Discover what the future holds for space tourism at this exciting event. Learn about the latest advancements in commercial space travel, upcoming tourist missions, and what it takes to prepare for a trip to space. Attendees will also get a virtual tour of a space hotel.",
+    "startDateTime": "2035-12-01T15:00:00.000Z",
+    "endDateTime": "2035-12-01T18:00:00.000Z",
+    "image": "/images/use11.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
+    "title": "Exploring the Outer Planets",
+    "category": "Astronomy",
+    "location": "Jet Propulsion Laboratory, Pasadena, CA",
+    "details": "Take a journey to the outer planets! This event will cover the latest discoveries about Jupiter, Saturn, Uranus, and Neptune, including findings from recent missions like Juno and Cassini. Participants will have the opportunity to ask questions and engage in interactive displays.",
+    "startDateTime": "2035-12-12T14:00:00.000Z",
+    "endDateTime": "2035-12-12T17:00:00.000Z",
+    "image": "/images/use9.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  }
+]

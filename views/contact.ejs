@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Celestial Gatherings</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/styles-core.css">
+    <link rel="stylesheet" href="/css/styles-contact.css">
+</head>
+<body class="contact">
+<%- include('partials/header') %>
+<%- include('partials/nav', { active: 'contact' }) %>
+
+<main class="container">
+    <header class="contact-head">
+        <h1 class="contact-title">Contact Us</h1>
+        <p class="contact-sub">We'd love to hear from you.</p>
+        <div class="divider"></div>
+    </header>
+
+    <section class="contact-hero">
+        <div class="contact-card">
+            <ul class="contact-list">
+                <li>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <div class="value"><span class="label">Email:</span> <a href="mailto:info@celestialgatherings.com">info@celestialgatherings.com</a></div>
+                </li>
+                <li>
+                    <i class="fas fa-phone" aria-hidden="true"></i>
+                    <div class="value"><span class="label">Phone:</span> <a href="tel:+11234567890">(123) 456-7890</a></div>
+                </li>
+                <li>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    <div class="value"><span class="label">Address:</span> 123 Space Ave, Astronomical City, Universe</div>
+                </li>
+            </ul>
+
+            <div class="contact-actions">
+                <a class="btn btn-outline" href="mailto:info@celestialgatherings.com"><i class="fas fa-paper-plane"></i> Email Us</a>
+                <a class="btn btn-outline" href="tel:+11234567890"><i class="fas fa-phone"></i> Call Now</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,31 @@
+body.auth .btn-primary {
+    background: var(--bg-primary) !important;
+    border-color: var(--bg-primary) !important;
+    color: #fff !important;
+}
+body.auth .btn-primary:hover {
+    background: var(--bg-primary-hover) !important;
+    border-color: var(--bg-primary-hover) !important;
+}
+
+body.auth .btn-primary:active,
+body.auth .btn-primary.active,
+body.auth .btn-primary:not(:disabled):not(.disabled):active,
+body.auth .show > .btn-primary.dropdown-toggle {
+    background: var(--bg-primary-hover) !important;
+    border-color: var(--bg-primary-hover) !important;
+}
+
+body.auth .btn-primary:focus,
+body.auth .btn-primary:active:focus,
+body.auth .btn-primary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px #E0E1DD, 0 0 0 6px #A0C1D1 !important;
+}
+
+body.auth .btn-check:checked + .btn-primary,
+body.auth .btn-check:active + .btn-primary {
+    background: var(--bg-primary) !important;
+    border-color: var(--bg-primary) !important;
+    color: #fff !important;
+}

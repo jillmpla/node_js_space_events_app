@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title><%= errorCode %> - Celestial Gatherings</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/styles-core.css">
+    <link rel="stylesheet" href="/css/styles-error.css">
+</head>
+<body class="error">
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+<main class="container error-page" id="main">
+    <section class="err-hero" role="group" aria-labelledby="err-heading">
+        <div class="err-badge" aria-hidden="true">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+
+        <h1 id="err-heading" class="err-title">
+            <span class="err-code"><%= errorCode %></span>
+            <span class="err-title-text"><%= errorTitle %></span>
+        </h1>
+
+        <p class="err-message"><%= errorMessage %></p>
+
+        <div class="err-actions">
+            <a class="btn btn-outline" href="/"><i class="fas fa-home" aria-hidden="true"></i> Home</a>
+            <a class="btn btn-outline" href="/events"><i class="far fa-calendar-alt" aria-hidden="true"></i> Browse Events</a>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer') %>
+</body>
+</html>
+
+
+
+

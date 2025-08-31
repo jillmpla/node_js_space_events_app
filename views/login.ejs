@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Celestial Gatherings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles-core.css">
+    <link rel="stylesheet" href="/css/styles-auth.css">
+</head>
+<!-- views/login.ejs -->
+<body class="auth login">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<%- include('partials/header', { userActive: 'login' }) %>
+<%- include('partials/nav') %>
+
+<main id="main" class="site-main container" role="main">
+    <h1>Login</h1>
+    <div class="divider"></div>
+
+    <% if (typeof successMessages !== 'undefined' && successMessages.length) { %>
+        <div class="alert alert-success" role="alert">
+            <% successMessages.forEach(m => { %><p class="mb-0"><%= m %></p><% }) %>
+        </div>
+    <% } %>
+
+    <% if (typeof errorMessages !== 'undefined' && errorMessages.length) { %>
+        <div class="alert alert-danger" role="alert">
+            <% errorMessages.forEach(m => { %><p class="mb-0"><%= m %></p><% }) %>
+        </div>
+    <% } else if (typeof locals !== 'undefined' && locals.errorMessages && locals.errorMessages.length) { %>
+        <div class="alert alert-danger" role="alert">
+            <% locals.errorMessages.forEach(m => { %><p class="mb-0"><%= m %></p><% }) %>
+        </div>
+    <% } %>
+
+    <form action="/user/login" method="POST" novalidate>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control" type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input class="form-control" type="password" id="password" name="password" autocomplete="current-password" required>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+</main>
+
+<%- include('partials/footer') %>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Profile - Celestial Gatherings</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/styles-core.css">
+    <link rel="stylesheet" href="/css/styles-profile.css">
+</head>
+
+<body class="profile">
+<%- include('partials/header', { userActive: 'profile' }) %>
+<%- include('partials/nav') %>
+
+<main class="container profile-page" role="main">
+    <header class="profile-head">
+        <h1 class="profile-title">Profile</h1>
+        <p class="profile-sub">Welcome!</p>
+        <div class="divider" aria-hidden="true"></div>
+    </header>
+
+    <section class="profile-card" aria-labelledby="profile-info">
+        <h2 id="profile-info" class="sr-only">Your Info</h2>
+        <div class="profile-row">
+            <div class="profile-field">
+                <span class="profile-label">First Name</span>
+                <span><%= he.decode(user.firstName) %></span>
+            </div>
+            <div class="profile-field">
+                <span class="profile-label">Last Name</span>
+                <span><%= he.decode(user.lastName) %></span>
+            </div>
+            <div class="profile-field">
+                <span class="profile-label">Email</span>
+                <span><%= he.decode(user.email) %></span>
+            </div>
+        </div>
+    </section>
+
+    <section aria-labelledby="your-events">
+        <h2 id="your-events" class="section-title">Your Events</h2>
+        <div class="list-card">
+            <ul class="item-list">
+                <% if (user.events && user.events.length) { %>
+                    <% user.events.forEach(event => { %>
+                        <li class="item">
+                            <div>
+                                <a class="item-title" href="/events/<%= event._id %>"><%= he.decode(event.title) %></a>
+                            </div>
+                            <div>
+                                <a href="/events/<%= event._id %>/edit" class="btn btn-success btn-sm">Edit</a>
+                                <button type="button" class="btn btn-danger btn-sm" onclick="deleteEvent('<%= event._id %>')">Delete</button>
+                            </div>
+                        </li>
+                    <% }) %>
+                <% } else { %>
+                    <li class="item">
+                        <div class="meta">No events yet.</div>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </section>
+
+    <section aria-labelledby="your-rsvps">
+        <h2 id="your-rsvps" class="section-title">Your RSVPs</h2>
+        <div class="list-card">
+            <ul class="item-list">
+                <% if (user.rsvps && user.rsvps.length) { %>
+                    <% user.rsvps.forEach(rsvp => { %>
+                        <li class="item">
+                            <div>
+                                <a class="item-title" href="/events/<%= rsvp.event._id %>"><%= he.decode(rsvp.event.title) %></a>
+                                <span class="meta">— <%= rsvp.status %></span>
+                            </div>
+                        </li>
+                    <% }) %>
+                <% } else { %>
+                    <li class="item">
+                        <div class="meta">No RSVPs yet.</div>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer') %>
+<script src="/javascript/confirmDelete.js"></script>
+</body>
+</html>
+
+
+
+
+

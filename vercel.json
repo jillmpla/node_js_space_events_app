@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "crons": [
+    {
+      "path": "/api/cron/reset",
+      "schedule": "0 6 * * *"
+    }
+  ],
+  "builds": [
+    { "src": "api/**/*.js", "use": "@vercel/node" },
+    { "src": "app.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "^/api/(.*)$", "dest": "/api/$1" },
+    { "src": "/(.*)", "dest": "/app.js" }
+  ]
+}
+

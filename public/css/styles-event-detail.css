@@ -1,0 +1,154 @@
+.event-detail {
+    color: var(--txt-dark);
+}
+
+.event-detail .event-title {
+    font-family: 'Platypi', serif;
+    font-weight: 600;
+    font-size: clamp(2.4rem, 2.2vw + 1.4rem, 3.2rem);
+    color: #111;
+    margin: 8px 0 12px;
+    line-height: 1.15;
+    text-align: center;
+}
+
+.event-detail .event-media {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0 14px;
+}
+.event-detail .event-hero-img {
+    width: 100%;
+    max-width: 760px;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    object-fit: cover;
+}
+
+.event-detail .event-meta {
+    max-width: 820px;
+    margin: 8px auto 10px;
+    text-align: center;
+}
+.event-detail .meta-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 8px;
+}
+.event-detail .meta {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--txt-dark);
+    font-size: clamp(1.1rem, 0.6vw + 1rem, 1.35rem);
+}
+.event-detail .meta i { color: var(--bg-primary); }
+
+.event-detail .badge {
+    position: static !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+
+    background: var(--bg-primary);
+    color: #fff;
+    border: 1px solid var(--bg-primary-hover);
+    border-radius: 999px;
+    padding: .35rem .8rem;
+    font-size: .9rem;
+    font-weight: 700;
+    box-shadow: 0 1px 0 rgba(0,0,0,.05);
+    margin: 8px auto 0;
+}
+.event-detail .divider {
+    height: 2px;
+    background: var(--link-dark);
+    opacity: .4;
+    margin: 14px auto 0;
+    max-width: 820px;
+}
+
+.event-detail .event-prose {
+    max-width: 820px;
+    margin: 16px auto 26px;
+}
+.event-detail .event-prose p {
+    color: var(--txt-dark);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.1rem 1.25rem;
+    font-size: 1.35rem;
+    line-height: 1.9;
+}
+
+.event-detail .rsvp {
+    max-width: 820px;
+    margin: 10px auto 42px;
+    text-align: center;
+}
+.event-detail .rsvp h2 {
+    font-family: 'Platypi', serif;
+    font-size: 1.7rem;
+    color: #111;
+    margin: 0 0 .5rem;
+}
+.event-detail .rsvp-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px 18px;
+    flex-wrap: wrap;
+}
+.event-detail .rsvp-button {
+    width: 210px;
+    padding: 14px 16px;
+    font-size: 1.12rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    margin: 6px 0;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    transition: background-color .25s ease, transform .08s ease, box-shadow .2s ease;
+}
+.event-detail .rsvp-yes    { background: #4A6FA5; }
+.event-detail .rsvp-yes:hover    { background: #3F608F; box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+.event-detail .rsvp-no     { background: #5C677D; }
+.event-detail .rsvp-no:hover     { background: #4D576A; box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+.event-detail .rsvp-maybe  { background: #9AA0A6; }
+.event-detail .rsvp-maybe:hover  { background: #878D94; box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+.event-detail .rsvp-button:active { transform: translateY(0); box-shadow: var(--shadow-sm); }
+
+.event-detail .rsvp-count {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--txt-dark);
+    margin: 14px auto 0;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: .55rem 1rem;
+    font-weight: 700;
+    width: fit-content;
+}
+
+.event-detail :where(a,button,[role="button"],input,select,textarea):focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px #E0E1DD, 0 0 0 6px #A0C1D1;
+}
+
+@media (max-width: 640px) {
+    .event-detail .event-title { font-size: 2.1rem; }
+    .event-detail .event-hero-img { max-width: 100%; border-radius: 14px; }
+    .event-detail .meta { font-size: 1.05rem; }
+    .event-detail .rsvp-button { width: 100%; }
+}

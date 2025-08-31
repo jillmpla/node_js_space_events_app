@@ -1,0 +1,10 @@
+<nav class="main-nav" aria-label="Primary">
+    <% const current = (typeof active !== 'undefined') ? active : ''; %>
+    <ul class="nav-list">
+        <li><a href="/"           class="nav-link<%= current === 'home'    ? ' is-active' : '' %>">Home</a></li>
+        <li><a href="/events"     class="nav-link<%= current === 'events'  ? ' is-active' : '' %>">Events</a></li>
+        <li><a href="/about"      class="nav-link<%= current === 'about'   ? ' is-active' : '' %>">About</a></li>
+        <li><a href="/contact"    class="nav-link<%= current === 'contact' ? ' is-active' : '' %>">Contact</a></li>
+    </ul>
+</nav>
+

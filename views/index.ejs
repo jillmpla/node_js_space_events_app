@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Celestial Gatherings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles-core.css">
+
+</head>
+<body>
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+<div class="container">
+    <h1 style="text-align: center;">Welcome to Celestial Gatherings</h1>
+    <div class="divider"></div>
+    <p class="intro-text" style="text-align: center;">
+        Join us for exciting space-themed events and meetups!
+    </p>
+
+    <hr class="icon">
+
+    <section>
+        <h2>Why Join Us?</h2>
+        <p class="intro-text">
+            Celestial Gatherings brings together space enthusiasts from all walks of life to explore the wonders of the universe.
+            Whether you're an amateur astronomer, a seasoned stargazer, or just curious about the night sky, there's something for everyone!
+        </p>
+    </section>
+
+    <hr class="icon">
+
+    <h2>Space Images</h2>
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="/images/main_1.jpg" alt="Space from Earth" class="img-fluid fixed-size">
+        </div>
+        <div class="col-sm-3">
+            <img src="/images/main_2.jpg" alt="Astronaut in Space" class="img-fluid fixed-size">
+        </div>
+        <div class="col-sm-3">
+            <img src="/images/main_3.jpg" alt="Space" class="img-fluid fixed-size">
+        </div>
+        <div class="col-sm-3">
+            <img src="/images/main_4.jpg" alt="Space" class="img-fluid fixed-size">
+        </div>
+    </div>
+
+    <hr class="icon">
+
+    <section>
+        <h2>Space Facts</h2>
+        <ul class="normal-text">
+            <li>Space is completely silent. There is no atmosphere to carry sound.</li>
+            <li>One day on Venus is longer than one year on Earth. It takes Venus about 243 Earth days to rotate once on its axis.</li>
+            <li>Jupiter has the shortest day of all the planets, completing a rotation on its axis in just under 10 hours.</li>
+            <li>There are more stars in the universe than grains of sand on all the Earth's beaches combined.</li>
+            <li>The footprints left by astronauts on the moon are likely to last millions of years, with no wind or water to erode them.</li>
+        </ul>
+    </section>
+
+    <hr class="icon">
+
+    <section>
+        <h2>Testimonials</h2>
+        <div class="testimonial">
+            <p class="testimonial-text">"Celestial Gatherings has rekindled my love for astronomy. Every event is well-organized and a lot of fun!"</p>
+            <div class="testimonial-name">- Jane Doe</div>
+        </div>
+        <div class="testimonial">
+            <p class="testimonial-text">"I've learned so much and met so many great people through this group. Highly recommend joining!"</p>
+            <div class="testimonial-name">- John Doe</div>
+        </div>
+    </section>
+</div>
+
+<%- include('partials/footer') %>
+</body>
+</html>
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About - Celestial Gatherings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles-core.css">
+    <link rel="stylesheet" href="/css/styles-about.css">
+
+</head>
+<body>
+<%- include('partials/header') %>
+<%- include('partials/nav', { active: 'about' }) %>
+
+<!-- HERO -->
+<section class="about-hero">
+    <div>
+        <h1>About Celestial Gatherings</h1>
+        <p>We bring together stargazers, space geeks, and astronomy enthusiasts of all levels to learn, share, and explore the night sky through meetups, talks, and viewing events.</p>
+        <div>
+            <% if (!user) { %>
+                <a class="btn btn-outline-light" href="/user/signup"><i class="fas fa-user-plus mr-1"></i> Join the Community</a>
+            <% } else { %>
+                <a class="btn btn-outline-light" href="/events/new"><i class="fas fa-plus mr-1"></i> Host an Event</a>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">What We Do</h2>
+        <p class="section-subtle mb-4">Community-driven events that make space science welcoming and fun.</p>
+
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="feature-card h-100">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-meteor"></i><h5 class="mb-0">Star Parties</h5>
+                    </div>
+                    <p class="mb-0 mt-2">Guided night-sky viewing with telescopes, constellations, and astrophotography tips.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="feature-card h-100">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-rocket"></i><h5 class="mb-0">Talks & Workshops</h5>
+                    </div>
+                    <p class="mb-0 mt-2">From beginner astronomy to deep-space missions, always engaging and welcoming.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="feature-card h-100">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-users"></i><h5 class="mb-0">Community</h5>
+                    </div>
+                    <p class="mb-0 mt-2">Connect with local clubs and new friends who love looking up as much as you do.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">In Numbers</h2>
+        <div class="row">
+            <div class="col-6 col-md-3 mb-3">
+                <div class="stat-card h-100">
+                    <div class="stat-number">8.1k</div>
+                    <div class="stat-label">Members</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-3">
+                <div class="stat-card h-100">
+                    <div class="stat-number">480+</div>
+                    <div class="stat-label">Events Hosted</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-3">
+                <div class="stat-card h-100">
+                    <div class="stat-number">42</div>
+                    <div class="stat-label">Cities</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-3">
+                <div class="stat-card h-100">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Positive Ratings</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="section">
+    <div class="container">
+        <div class="cta">
+            <h3>Ready to explore the night sky with us?</h3>
+            <p>Join the community and never miss a meetup.</p>
+            <% if (!user) { %>
+                <a class="btn btn-primary" href="/user/signup"><i class="fas fa-user-plus mr-1"></i> Sign Up</a>
+            <% } else { %>
+                <a class="btn btn-primary" href="/events/new"><i class="fas fa-plus mr-1"></i> Create Event</a>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>
+</body>
+</html>
+

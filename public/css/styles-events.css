@@ -1,0 +1,25 @@
+.cat-title {
+    color: var(--bg-primary);
+    margin: 22px 0 14px;
+}
+.cat-title .chip {
+    background: none;
+    border: none;
+    color: var(--bg-primary);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 0 0 .25rem 0;
+    display: inline-block;
+    position: relative;
+}
+.cat-title .chip::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 60px;
+    border-radius: 2px;
+    background: var(--link-dark);
+    margin-top: .45rem;
+}

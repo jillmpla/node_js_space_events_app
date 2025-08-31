@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Event - Celestial Gatherings</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/styles-core.css">
+    <link rel="stylesheet" href="/css/styles-edit-event.css">
+</head>
+<body class="new-event">
+<%- include('partials/header', { userActive: 'new-event' }) %>
+<%- include('partials/nav', { active: 'events' }) %>
+
+<main class="container" id="main">
+    <h1>Create New Event</h1>
+    <div class="divider"></div>
+
+    <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+        <div class="alert alert-danger" role="alert" aria-live="polite">
+            <ul class="mb-0">
+                <% errors.forEach(error => { %>
+                    <li><%= error.msg %></li>
+                <% }) %>
+            </ul>
+        </div>
+    <% } %>
+
+    <form id="newEventForm"
+          action="/events"
+          method="POST"
+          enctype="multipart/form-data"
+          onsubmit="return validateForm()">
+
+        <div class="form-group">
+            <label for="eventTitle">Event Title</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="eventTitle"
+                    name="eventTitle"
+                    value="<%= formData && formData.eventTitle ? he.decode(formData.eventTitle) : '' %>"
+                    required
+                    aria-describedby="titleHelp">
+            <small id="titleHelp" class="form-text">Use a clear, descriptive title.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="eventCategory">Category</label>
+            <select
+                    class="form-control"
+                    id="eventCategory"
+                    name="eventCategory"
+                    required
+                    aria-describedby="catHelp">
+                <option value="" disabled <%= !formData ? 'selected' : '' %>>Select a category</option>
+                <option value="Astronomy" <%= formData && formData.eventCategory === 'Astronomy' ? 'selected' : '' %>>Astronomy</option>
+                <option value="Science"   <%= formData && formData.eventCategory === 'Science'   ? 'selected' : '' %>>Science</option>
+                <option value="Space"     <%= formData && formData.eventCategory === 'Space'     ? 'selected' : '' %>>Space</option>
+                <option value="Education" <%= formData && formData.eventCategory === 'Education' ? 'selected' : '' %>>Education</option>
+                <option value="Other"     <%= formData && formData.eventCategory === 'Other'     ? 'selected' : '' %>>Other</option>
+            </select>
+            <small id="catHelp" class="form-text">Helps attendees find your event.</small>
+        </div>
+
+        <div class="form-row-two">
+            <div class="form-group">
+                <label for="startDate">Start Date/Time</label>
+                <input
+                        type="datetime-local"
+                        class="form-control"
+                        id="startDate"
+                        name="startDate"
+                        value="<%= formData && formData.startDate ? formData.startDate : '' %>"
+                        required>
+            </div>
+
+            <div class="form-group">
+                <label for="endDate">End Date/Time</label>
+                <input
+                        type="datetime-local"
+                        class="form-control"
+                        id="endDate"
+                        name="endDate"
+                        value="<%= formData && formData.endDate ? formData.endDate : '' %>"
+                        required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="eventLocation">Location</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="eventLocation"
+                    name="eventLocation"
+                    value="<%= formData && formData.eventLocation ? he.decode(formData.eventLocation) : '' %>"
+                    required
+                    aria-describedby="locHelp">
+            <small id="locHelp" class="form-text">Include city and any access details.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="eventImage">Event Image</label>
+            <input
+                    type="file"
+                    class="form-control-file"
+                    id="eventImage"
+                    name="eventImage"
+                    accept="image/*"
+                    aria-describedby="imgHelp">
+            <small id="imgHelp" class="form-text">JPEG/PNG recommended. Optional if "No Image" is checked.</small>
+        </div>
+
+        <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="noImage" name="noImage" <%= formData && formData.noImage ? 'checked' : '' %>>
+            <label for="noImage" class="form-check-label">No Image</label>
+        </div>
+
+        <div class="form-group">
+            <label for="eventDescription">Event Description</label>
+            <textarea
+                    class="form-control"
+                    id="eventDescription"
+                    name="eventDescription"
+                    required
+                    aria-describedby="descHelp"><%= formData && formData.eventDescription ? he.decode(formData.eventDescription) : '' %></textarea>
+            <small id="descHelp" class="form-text">What to expect, who it's for, and any gear to bring.</small>
+        </div>
+
+        <div class="button-container">
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-plus" aria-hidden="true"></i> Create Event
+            </button>
+            <button type="reset" class="btn btn-secondary btn-cancel">
+                <i class="fas fa-undo" aria-hidden="true"></i> Clear
+            </button>
+        </div>
+    </form>
+</main>
+
+<%- include('partials/footer') %>
+<script src="/javascript/formValidation.js"></script>
+</body>
+</html>
+
+
+

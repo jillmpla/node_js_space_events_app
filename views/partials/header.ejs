@@ -1,0 +1,44 @@
+<header class="site-header">
+    <a href="/" class="brand" aria-label="Celestial Gatherings Home">
+        <img src="/images/logo.png" alt="Celestial Gatherings" class="logo" width="160" height="48">
+    </a>
+
+    <nav class="user-nav" aria-label="User">
+        <% const currentUserNav = (typeof userActive !== 'undefined') ? userActive : ''; %>
+
+        <% if (!user) { %>
+            <a
+                    class="btn-link<%= currentUserNav === 'signup' ? ' is-active' : '' %>"
+                    href="/user/signup"
+                    <%= currentUserNav === 'signup' ? 'aria-current="page"' : '' %>
+            >Sign Up</a>
+            <span aria-hidden="true" class="sep">·</span>
+            <a
+                    class="btn-link<%= currentUserNav === 'login' ? ' is-active' : '' %>"
+                    href="/user/login"
+                    <%= currentUserNav === 'login' ? 'aria-current="page"' : '' %>
+            >Log In</a>
+        <% } else { %>
+            <a
+                    class="btn-link<%= currentUserNav === 'new-event' ? ' is-active' : '' %>"
+                    href="/events/new"
+                    <%= currentUserNav === 'new-event' ? 'aria-current="page"' : '' %>
+            >New Event</a>
+            <span aria-hidden="true" class="sep">·</span>
+            <a
+                    class="btn-link<%= currentUserNav === 'profile' ? ' is-active' : '' %>"
+                    href="/user/profile"
+                    <%= currentUserNav === 'profile' ? 'aria-current="page"' : '' %>
+            ><%= user.firstName %>'s Profile</a>
+            <span aria-hidden="true" class="sep">·</span>
+            <form action="/user/logout" method="POST" class="inline">
+                <button type="submit" class="link-button" aria-label="Log out">Log Out</button>
+            </form>
+        <% } %>
+    </nav>
+</header>
+
+
+
+
+

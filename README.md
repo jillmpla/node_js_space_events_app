@@ -170,8 +170,8 @@ This codebase follows the Model-View-Controller (MVC) pattern. This keeps the ap
 1) Clone repository
 
 ```bash
-git clone https://github.com/yourusername/celestial-gatherings.git
-cd celestial-gatherings
+git clone https://github.com/jillmpla/node_js_space_events_app.git
+cd node_js_space_events_app
 ```
 
 2) Install dependencies

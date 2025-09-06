@@ -11,6 +11,17 @@
     "hostName": "Jane Doe"
   },
   {
+    "title": "A Night Under the Stars",
+    "category": "Astronomy",
+    "location": "Griffith Observatory, Los Angeles, CA",
+    "details": "Spend an evening exploring the wonders of the California night sky with astronomers at Griffith Observatory. Guests will enjoy telescope viewing, guided constellation tours, and a special lecture on the future of deep-space observation.",
+    "startDateTime": "2035-06-22T08:00:00.000Z",
+    "endDateTime": "2035-06-22T09:00:00.000Z",
+    "image": "/images/go.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
     "title": "Moon Landing Anniversary",
     "category": "Space",
     "location": "Griffith Observatory, Los Angeles, CA",
@@ -35,7 +46,7 @@
   {
     "title": "Lunar Exploration",
     "category": "Space",
-    "location": "NASA Space Center, Houston, TX",
+    "location": "Space Center Houston, Houston, TX",
     "details": "Join us for an in-depth look at the history and future of lunar exploration. This event will cover past missions to the moon, current lunar research, and upcoming missions planned by various space agencies. Participants will also get to see moon rocks and other lunar artifacts.",
     "startDateTime": "2035-08-05T18:00:00.000Z",
     "endDateTime": "2035-08-05T23:00:00.000Z",
@@ -49,7 +60,7 @@
     "location": "Central Park, NY",
     "details": "Explore the lunar landscape and marvel at the beauty of the Moon. This event is suitable for all ages and promises an unforgettable experience under the moonlit sky.",
     "startDateTime": "2035-08-26T03:00:00.000Z",
-    "endDateTime": "2035-08-25T07:00:00.000Z",
+    "endDateTime": "2035-08-26T07:00:00.000Z",
     "image": "/images/use3.jpg",
     "hostEmail": "janedoe1@gmail.com",
     "hostName": "Jane Doe"
@@ -66,12 +77,34 @@
     "hostName": "Jane Doe"
   },
   {
+    "title": "Black Holes 101",
+    "category": "Education",
+    "location": "U.S. Space & Rocket Center, Huntsville, AL",
+    "details": "Dive into the mysterious world of black holes. Learn how they form, how scientists detect them, and what they teach us about the universe.",
+    "startDateTime": "2035-09-21T23:30:00.000Z",
+    "endDateTime": "2035-09-22T01:00:00.000Z",
+    "image": "/images/blackhole.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
+    "title": "Journey to the Stars",
+    "category": "Education",
+    "location": "Space Center Houston, Houston, TX",
+    "details": "An interactive lecture and workshop where participants learn about stellar evolution, from nebulae to supernovae.",
+    "startDateTime": "2035-10-15T19:00:00.000Z",
+    "endDateTime": "2035-10-15T21:00:00.000Z",
+    "image": "/images/nebu.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
     "title": "Star Gazing at the Park",
     "category": "Astronomy",
     "location": "Central Park, NY",
     "details": "Participants will have the opportunity to explore the wonders of the night sky using high-quality telescopes. This event is perfect for both seasoned star gazers and newcomers alike, offering a chance to learn about constellations, planets, and other celestial phenomena.",
     "startDateTime": "2035-10-16T02:00:00.000Z",
-    "endDateTime": "2035-10-15T04:00:00.000Z",
+    "endDateTime": "2035-10-16T04:00:00.000Z",
     "image": "/images/use1.jpg",
     "hostEmail": "janedoe1@gmail.com",
     "hostName": "Jane Doe"
@@ -84,6 +117,17 @@
     "startDateTime": "2035-11-04T15:00:00.000Z",
     "endDateTime": "2035-11-04T18:00:00.000Z",
     "image": "/images/use10.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
+    "title": "Rocky Mountain Space Innovators",
+    "category": "Other",
+    "location": "Wings Over the Rockies Air & Space Museum, Denver, CO",
+    "details": "Celebrate Colorado's role in the aerospace industry with talks from local startups, interactive exhibits, and networking with innovators shaping the future of space technology.",
+    "startDateTime": "2035-11-05T16:00:00.000Z",
+    "endDateTime": "2035-11-05T19:00:00.000Z",
+    "image": "/images/colord.jpg",
     "hostEmail": "janedoe1@gmail.com",
     "hostName": "Jane Doe"
   },
@@ -101,7 +145,7 @@
   {
     "title": "The Future of Space Tourism",
     "category": "Space",
-    "location": "SpaceX Headquarters, Hawthorne, CA",
+    "location": "SpaceX Starbase, Boca Chica, TX",
     "details": "Discover what the future holds for space tourism at this exciting event. Learn about the latest advancements in commercial space travel, upcoming tourist missions, and what it takes to prepare for a trip to space. Attendees will also get a virtual tour of a space hotel.",
     "startDateTime": "2035-12-01T15:00:00.000Z",
     "endDateTime": "2035-12-01T18:00:00.000Z",
@@ -110,13 +154,35 @@
     "hostName": "Jane Doe"
   },
   {
+    "title": "Mars Night: From Phobos to Perseverance",
+    "category": "Education",
+    "location": "American Museum of Natural History, New York, NY",
+    "details": "Short talks about Mars missions, followed by a Q&A session. Accessible, engaging, and beginner-friendly.",
+    "startDateTime": "2035-12-02T22:00:00.000Z",
+    "endDateTime": "2035-12-03T00:00:00.000Z",
+    "image": "/images/marsp.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
     "title": "Exploring the Outer Planets",
     "category": "Astronomy",
-    "location": "Jet Propulsion Laboratory, Pasadena, CA",
+    "location": "California Science Center, Los Angeles, CA",
     "details": "Take a journey to the outer planets! This event will cover the latest discoveries about Jupiter, Saturn, Uranus, and Neptune, including findings from recent missions like Juno and Cassini. Participants will have the opportunity to ask questions and engage in interactive displays.",
     "startDateTime": "2035-12-12T14:00:00.000Z",
     "endDateTime": "2035-12-12T17:00:00.000Z",
     "image": "/images/use9.jpg",
+    "hostEmail": "janedoe1@gmail.com",
+    "hostName": "Jane Doe"
+  },
+  {
+    "title": "Cosmic Art Festival",
+    "category": "Other",
+    "location": "Monte Sano State Park, Huntsville, AL",
+    "details": "An outdoor festival blending astronomy with the arts, including live music, space-inspired art installations, and telescope viewing stations.",
+    "startDateTime": "2035-12-20T22:00:00.000Z",
+    "endDateTime": "2035-12-21T02:00:00.000Z",
+    "image": "/images/cosmicarty.jpg",
     "hostEmail": "janedoe1@gmail.com",
     "hostName": "Jane Doe"
   }

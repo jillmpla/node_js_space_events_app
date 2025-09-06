@@ -1,8 +1,8 @@
-// scripts/exportSeed.js (overwrites defaultEvents.json)
-// Usage:
-//   node scripts/exportSeed.js
-//   node scripts/exportSeed.js --seed-only
-//   node scripts/exportSeed.js --out seed/defaultEvents.json --force
+//scripts/exportSeed.js (overwrites defaultEvents.json)
+//Usage:
+//  node scripts/exportSeed.js
+//  node scripts/exportSeed.js --seed-only
+//  node scripts/exportSeed.js --out seed/defaultEvents.json --force
 
 require('dotenv').config();
 const fs = require('fs');
@@ -41,7 +41,6 @@ const outFile = outFlagIdx > -1 ? args[outFlagIdx + 1] : path.join('seed', 'defa
             startDateTime: e.startDateTime ? new Date(e.startDateTime).toISOString() : null,
             endDateTime: e.endDateTime ? new Date(e.endDateTime).toISOString() : null,
             image: e.image || null,
-            // portable host fields (no ObjectId coupling)
             hostEmail: e.host && e.host.email ? e.host.email : null,
             hostName: e.host ? `${e.host.firstName || ''} ${e.host.lastName || ''}`.trim() : null
         }));
